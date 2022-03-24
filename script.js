@@ -141,3 +141,59 @@ function getPassWordOptions() {
     };
     return passwordOptions;
 }
+
+// Function for getting a random element from an array
+function getRandom(arr) {
+    var randIndex = Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
+    return randElement;
+}
+
+// Function to generate password with user input
+function generatePassword() {
+    var options = getPassWordOptions();
+    // Variable to store password as it's being concatenated
+    var result = [];
+
+    // Array to store types of characters to include in password
+    var possibleCharacters = [];
+
+    // Array to contain one of each type of chosen character to ensure each will be used
+    var guaranteedCharacters = [];
+
+    // Conditional statement that adds array of special characters into array of possible characters based on user input
+    // Push new random special character to guaranteedCharacters
+    if (options.hasSpecialCharacters) {
+        possibleCharacters = possibleCharacters.concat(specialCharacters);
+        guaranteedCharacters.push(getRandom(specialCharacters));
+    };
+
+    // Conditional statement that adds array of numeric characters into array of possible characters based on user input
+    // Push new random special character to guaranteedCharacters
+    if (options.hasNumericCharacters) {
+        possibleCharacters = possibleCharacters.concat(hasNumericCharacters);
+        guaranteedCharacters.push(getRandom(numericCharacters));
+    };
+
+    // Conditional statement that adds array of lowercase characters into array of possible characters based on user input
+    // Push new random lower-cased character to guaranteedCharacters
+    if (options.hasLowerCasedCharacters) {
+        possibleCharacters = possibleCharacters.concat(hasLowerCasedCharacters);
+        guaranteedCharacters.push(getRandom(lowerCasedCharacters));
+    };
+
+    // Conditional statement that adds array of uppercase characters into array of possible characters based on user input
+    // Push new random upper-cased character to guaranteedCharacters
+    if (options.hasUpperCasedCharacters) {
+        possibleCharacters = possibleCharacters.concat(hasUpperCasedCharacters);
+        guaranteedCharacters.push(getRandom(hasUpperCasedCharacters));
+    };
+
+
+
+
+
+
+
+}
+
