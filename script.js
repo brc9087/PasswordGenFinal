@@ -20,30 +20,30 @@ var numChar = [
 
 var lowerCaseChar = [
     'a',
-    'b', 
-    'c', 
-    'd', 
-    'e', 
-    'f', 
-    'g', 
-    'h', 
-    'i', 
-    'j', 
-    'k', 
-    'l', 
-    'm', 
-    'n', 
-    'o', 
-    'p', 
-    'q', 
-    'r', 
-    's', 
-    't', 
-    'u', 
-    'v', 
-    'w', 
-    'x', 
-    'y', 
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
     'z'
 ];
 
@@ -74,4 +74,55 @@ var upperCaseChars = [
     'X',
     'Y',
     'Z'
-]
+];
+
+// Function to prompt user for password options
+function getPassWordOptions() {
+    var length = parseInt(
+        prompt('How many characters do you want in your password?')
+    );
+
+    // Conditional statement to check if password length is a number. Prompts end if this evaluates false
+    if (isNaN(length) === true) {
+        alert('Please input a number');
+        return;
+    }
+
+    // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
+    if (length < 8) {
+        alert('Password must be at least 8 characters!');
+        return;
+    };
+
+    // Conditional statement to check if password length is less than 128 characters long. Prompts end if this evaluates false
+    if (length > 128) {
+        alert('Password must be less than 128 characters long!');
+        return;
+    };
+
+    // Variable to store boolean regarding the inclusion of special characters
+    var hasSpecialCharacters = confirm(
+        'Click ok if you want to include special characters'
+    );
+
+    // Variable to store boolean regarding the inclusion of numeric characters
+    var hasNumericCharacters = confirm(
+        'Click ok if you want to include numeric characters'
+    );
+
+    // Variable to store boolean regarding the inclusion of lowercase characters
+    var hasLowerCasedCharacters = confirm(
+        'Click ok for LowerCase characters'
+    );
+
+    // Variable to store boolean regarding the inclusion of uppercase characters
+    var hasUpperCasedCharacters = confirm(
+        'Click ok for UpperCase characters'
+    );
+
+
+
+
+
+
+}
