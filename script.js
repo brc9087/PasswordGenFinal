@@ -120,9 +120,24 @@ function getPassWordOptions() {
         'Click ok for UpperCase characters'
     );
 
+    // Conditional statement to check if user does not include any types of characters. Password generator ends if all four variables evaluate to false
+    if (
+        hasSpecialCharacters === false &&
+        hasNumericCharacters === false &&
+        hasLowerCasedCharacters === false &&
+        hasUpperCasedCharacters === false
+    ) {
+        alert('Please select at least one character type!');
+        return;
+    };
 
-
-
-
-
+    // Object to store user input
+    var passwordOptions = {
+        length: length,
+        hasNumericCharacters: hasNumericCharacters,
+        hasSpecialCharacters: hasSpecialCharacters,
+        hasLowerCasedCharacters: hasLowerCasedCharacters,
+        hasUpperCasedCharacters: hasUpperCasedCharacters
+    };
+    return passwordOptions;
 }
